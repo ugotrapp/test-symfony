@@ -20,9 +20,11 @@ class AppFixtures extends Fixture
     {
         $user = new User();
         $user->setEmail('admin@example.com');
-        $password = $this->encoder->encodePassword($user, '123');
+        $password = $this->encoder->encodePassword($user,'123');
         $user->setPassword($password);
         $user->setRoles(['ROLE_ADMIN']);
+        $manager->persist($user);
         $manager->flush();
+
     }
 }

@@ -27,6 +27,8 @@ Ensuite visitez la page [http://localhost:8000](http://localhost:8000).
 
 ### Liste des CRUD
 
+page de login : https://127.0.0.1:8000/login/
+
 page pour les graines : https://127.0.0.1:8000/seed/
 
 page des familles : https://127.0.0.1:8000/family/
