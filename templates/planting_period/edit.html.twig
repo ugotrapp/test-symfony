@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit PlantingPeriod{% endblock %}
+
+{% block body %}
+    <h1>Edit PlantingPeriod</h1>
+
+    {{ include('planting_period/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('planting_period_index') }}">back to list</a>
+
+    {{ include('planting_period/_delete_form.html.twig') }}
+{% endblock %}

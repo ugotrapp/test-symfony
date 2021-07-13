@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HarvestPeriod{% endblock %}
+
+{% block body %}
+    <h1>HarvestPeriod</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ harvest_period.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ harvest_period.name }}</td>
+            </tr>
+            <tr>
+                <th>Rank</th>
+                <td>{{ harvest_period.rank }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('harvest_period_index') }}">back to list</a>
+
+    <a href="{{ path('harvest_period_edit', {'id': harvest_period.id}) }}">edit</a>
+
+    {{ include('harvest_period/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PlantingPeriod{% endblock %}
+
+{% block body %}
+    <h1>Create new PlantingPeriod</h1>
+
+    {{ include('planting_period/_form.html.twig') }}
+
+    <a href="{{ path('planting_period_index') }}">back to list</a>
+{% endblock %}

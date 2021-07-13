@@ -48,6 +48,11 @@ class Seed
      */
     private $harvestPeriod;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Family::class, inversedBy="seeds")
+     */
+    private $family;
+
     public function __construct()
     {
         $this->plantingPeriod = new ArrayCollection();
@@ -143,6 +148,18 @@ class Seed
     public function removeHarvestPeriod(HarvestPeriod $harvestPeriod): self
     {
         $this->harvestPeriod->removeElement($harvestPeriod);
+
+        return $this;
+    }
+
+    public function getFamily(): ?Family
+    {
+        return $this->family;
+    }
+
+    public function setFamily(?Family $family): self
+    {
+        $this->family = $family;
 
         return $this;
     }

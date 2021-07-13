@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HarvestPeriod index{% endblock %}
+
+{% block body %}
+    <h1>HarvestPeriod index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Rank</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for harvest_period in harvest_periods %}
+            <tr>
+                <td>{{ harvest_period.id }}</td>
+                <td>{{ harvest_period.name }}</td>
+                <td>{{ harvest_period.rank }}</td>
+                <td>
+                    <a href="{{ path('harvest_period_show', {'id': harvest_period.id}) }}">show</a>
+                    <a href="{{ path('harvest_period_edit', {'id': harvest_period.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('harvest_period_new') }}">Create new</a>
+{% endblock %}

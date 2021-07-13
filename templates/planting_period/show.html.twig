@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PlantingPeriod{% endblock %}
+
+{% block body %}
+    <h1>PlantingPeriod</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ planting_period.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ planting_period.name }}</td>
+            </tr>
+            <tr>
+                <th>Rank</th>
+                <td>{{ planting_period.rank }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('planting_period_index') }}">back to list</a>
+
+    <a href="{{ path('planting_period_edit', {'id': planting_period.id}) }}">edit</a>
+
+    {{ include('planting_period/_delete_form.html.twig') }}
+{% endblock %}

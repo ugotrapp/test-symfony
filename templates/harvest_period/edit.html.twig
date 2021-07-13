@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit HarvestPeriod{% endblock %}
+
+{% block body %}
+    <h1>Edit HarvestPeriod</h1>
+
+    {{ include('harvest_period/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('harvest_period_index') }}">back to list</a>
+
+    {{ include('harvest_period/_delete_form.html.twig') }}
+{% endblock %}
